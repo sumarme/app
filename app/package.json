@@ -18,5 +18,13 @@
   "devDependencies": {},
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumarme/app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sumarme/app/issues"
+  },
+  "homepage": "https://github.com/sumarme/app#readme",
   "description": ""
 }

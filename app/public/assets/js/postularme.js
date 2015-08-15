@@ -1,61 +1,66 @@
 $(document).ready(function() {
-        var ubicacion;
-        // var lastTime = 0;
-        // var dialog = document.getElementById('dialog');
-        // dialog.showModal();
+    var ubicacion;
+    // var lastTime = 0;
+    // var dialog = document.getElementById('dialog');
+    // dialog.showModal();
 
-        // $('#ingresarBtn').on('click', function() {
-        //     dialog.close();
-        //     $('#userName').text($('#userInput').val());
-        // });
+    // $('#ingresarBtn').on('click', function() {
+    //     dialog.close();
+    //     $('#userName').text($('#userInput').val());
+    // });
 
-        $('#postularme').on("submit", function(event) {
-                // Evitar el refresh por default
-                event.preventDefault();
-                // Obtener ubicacion
-                waitingDialog.show();
+    $('#postularme').on("submit", function(event) {
+        // Evitar el refresh por default
+        event.preventDefault();
+        // Obtener ubicacion
+        waitingDialog.show();
 
-                ubicacion = navigator.geolocation.getCurrentPosition(function(position) {
-                        // socket.emit('getClosestStops', {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude
-                        // }
-                    );
-                },
-                function(err) {
-                    console.log('Ocurrio un error mientras se intentaba obtener la ubicacion:' + err);
-                }, {
-                    enableHighAccuracy: true,
-                    timeout: 10000,
-                    maximumAge: 600000
-                });
-
-            // if you want to mock up your location, this is Powell & Market St
-            // socket.emit('getClosestStops', {
-            //     latitude: 37.7847999,
-            //     longitude: -122.40768
-            // });
-
+        navigator.geolocation.getCurrentPosition(function(position) {
             // hacer POST a /postularme
             $.ajax({
                 type: 'POST',
-                url: '/postularme',
+                url: '/api/postularme',
                 data: JSON.stringify({
                     disponible: true,
-                    ubicacion: ubicacion,
+                    timestamp: Date.now(),
+                    user: 'mayor tom', //cambiar para que tome de un cookie
+                    ubicacion: {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    },
                     distancia: $('#dispDisponible').val()
                 }),
                 dataType: 'json',
+                contentType: 'json',
                 headers: {
-                    'timestamp': Date.now(),
-                    'user': 'mayor tom' //cambiar para que tome de un cookie
+                    authorization: true; //despues poner otra cosa/codigo
                 },
                 success: function() {
-                    // Confirmar/Erro y redirigir al perfil del usuario
+                    // Confirmar/Error y redirigir al perfil del usuario
                     console.log('hizo el post');
+                    // window.location.replace("/");
                 }
             });
+            // socket.emit('getClosestStops', {
+            x
+            // Comenté los dos de abajo porque los copié más arriba en .ajax
+            // latitude: position.coords.latitude,
+            // longitude: position.coords.longitude
+            // });
+        }, function(err) {
+            console.log('Ocurrio un error mientras se intentaba obtener la ubicacion:' + err);
+        }, {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 600000
         });
+
+        // if you want to mock up your location, this is Powell & Market St
+        // socket.emit('getClosestStops', {
+        //     latitude: 37.7847999,
+        //     longitude: -122.40768
+        // });
+    });
     // Cada X cantidad de segundos, hacer un GET a /data
     // Por cada elemento de la lista que responda el servidor,
     // agregarlo haciendo $('#contenedor .centre').append(htmlDelTweet)

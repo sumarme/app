@@ -8,7 +8,9 @@ var mongoURL = (process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost:270
 module.exports = {
     connectToServer: function(callback) {
         if (_db) {
-            return process.nextTick(callback);
+            return process.nextTick(function(){
+                callback (null, _db);
+            });
         }
         MongoClient.connect(mongoURL, function(err, db) {
                 _db = db;
