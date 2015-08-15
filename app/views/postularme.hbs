@@ -1,0 +1,73 @@
+<head>
+	<title>{{title}}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,  maximum-scale=1.0">
+	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+	<!-- inicio javaScript -->
+	<script src="vendor/js/jquery.js"></script>
+	<script src="vendor/js/bootstrap.min.js"></script>
+	<!-- fin javaScript -->
+</head>
+<body>
+	<!-- inicio header -->
+	<header class="header-principal">
+		<div class="conteiner-fluid">
+			<div class="row">
+				<nav>
+					<div class="conteiner-brand col-xs-8">
+						<img class="img-responsive center-block" src="assets/images/sumarme.png" title="sumarme" alt="sumarme home">
+					</div>
+					<div class="conteiner-menu col-xs-2">
+						<div class="dropdown">
+							<button class="btn dropdown-toggle" type="button"
+							id="dropdownMenu1" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-align-justify">
+								</button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">ingresá</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">registrate</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">¿como funciona?</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<!--fin de header-->
+		<!-- inicio content -->
+		<section class="container">
+			<form action="php/envia.php" method="post" id="postularme">
+				<div class="columna-izq col-lg-6 col-md-6 col-sm-6">
+					<div class="form-group">
+						<h1>Completá los datos para postularte</h1>
+						<p>Una vez que te postules los usuarios que necesiten jugadores podrán verte y convocarte para su partido.</p>
+						<p>Cuando seas convocado recibirás los datos del partido y deberás confirmar tu asistencia.</p>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputName2">Horario disponible para jugar</label>
+						<input type="text" class="form-control" id="timeDesde" placeholder="Desde" name='timeDesde' value='' required>
+						<input type="text" class="form-control" id="timeHasta" placeholder="Hasta" name='timeHasta' value='' required>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputName2">Donde voy a estar disponible</label>
+						<input type="text" class="form-control" id="ubicacionDisp" placeholder="Usar mi ubicación" name='ubicacionDisp' value='' required>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Hasta que distancia iría</label>
+						<input type="text" class="form-control" id="dispDisponible" placeholder="15 kms" name='dispDisponible' value='' required>
+					</div>
+					<div class="form-group">
+						<button type="submit" data-toggle="modal" data-target='' class="btn btn-default boton-envio  col-lg-12 col-md-12 col-xs-12">POSTULARME</button>
+					</div>
+				</form>
+				<!-- fin content -->
+			</body>
