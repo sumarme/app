@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', routes);   // lo que digo es que todas las rutas van montadas en el root
 app.use('/users', users);
 
 
