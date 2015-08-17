@@ -1,20 +1,11 @@
 $(document).ready(function() {
     var ubicacion;
-    // var lastTime = 0;
-    // var dialog = document.getElementById('dialog');
-    // dialog.showModal();
-
-    // $('#ingresarBtn').on('click', function() {
-    //     dialog.close();
-    //     $('#userName').text($('#userInput').val());
-    // });
 
     $('#postularme').on("submit", function(event) {
         // Evitar el refresh por default
         event.preventDefault();
         // Obtener ubicacion
         waitingDialog.show();
-
         navigator.geolocation.getCurrentPosition(function(position) {
             // hacer POST a /postularme
             $.ajax({
@@ -33,65 +24,93 @@ $(document).ready(function() {
                 dataType: 'json',
                 contentType: 'json',
                 headers: {
-                    authorization: true; //despues poner otra cosa/codigo
+                    authorization: true //despues poner otra cosa/codigo
                 },
-                success: function() {
-                    // Confirmar/Error y redirigir al perfil del usuario
-                    console.log('hizo el post');
-                    // window.location.replace("/");
+                success: function(res) {
+                    // if (err) {
+                    //     console.log("Se devolvíó el error: " + err);
+                    //     location.reload();
+                    //     return;
+                    // }; // Confirmar/Error y redirigir al perfil del usuario
+                    console.log('Se hizo el post: ' + res);
+                    window.location.replace("/"); // lo puse para que redirija hacia la homepage pero habría que pensar a donde queremos mandar al usuario
+                },
+                error: function(err) {
+                    console.log('El error fue: ' + err);
                 }
             });
             // socket.emit('getClosestStops', {
-            x
+
             // Comenté los dos de abajo porque los copié más arriba en .ajax
             // latitude: position.coords.latitude,
             // longitude: position.coords.longitude
             // });
-        }, function(err) {
-            console.log('Ocurrio un error mientras se intentaba obtener la ubicacion:' + err);
-        }, {
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 600000
+            // }, function(err) {
+            //     console.log('Ocurrio un error mientras se intentaba obtener la ubicacion:' + err);
+            // }, {
+            //     enableHighAccuracy: true,
+            //     timeout: 10000,
+            //     maximumAge: 600000
+            // });
+
+            // if you want to mock up your location, this is Powell & Market St
+            // socket.emit('getClosestStops', {
+            //     latitude: 37.7847999,
+            //     longitude: -122.40768
+            // });
         });
-
-        // if you want to mock up your location, this is Powell & Market St
-        // socket.emit('getClosestStops', {
-        //     latitude: 37.7847999,
-        //     longitude: -122.40768
-        // });
     });
-    // Cada X cantidad de segundos, hacer un GET a /data
-    // Por cada elemento de la lista que responda el servidor,
-    // agregarlo haciendo $('#contenedor .centre').append(htmlDelTweet)
-    // HINT: usar la function getHTMLforTweet, que recibe un objeto que representa
-    // un tweet y devuelve un objeto que representa su HTML
+    //le robé el waitingDialog a a0viedo
 
-    // setInterval(function() {
-    //     $.ajax({
-    //         type: 'GET',
-    //         url: '/data',
-    //         dataType: 'json',
-    //         headers: {
-    //             'timestamp': lastTime,
-    //             'user': $('#userName').text()
-    //         },
-    //         success: function(data) {
-    //             data.forEach(function(curEl) {
-    //                 var tweetHtml = getHTMLforTweet(curEl);
+    var waitingDialog = (function($) {
+        // Creating modal dialog's DOM
+        var $dialog = $(
+            '<div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">' +
+            '<div class="modal-dialog modal-m">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header"><h3 style="margin:0;"></h3></div>' +
+            '<div class="modal-body">' +
+            '<div class="progress progress-striped active" style="margin-bottom:0;"><div class="progress-bar" style="width: 100%"></div></div>' +
+            '</div>' +
+            '</div></div></div>');
 
-    //                 $('#contenedor .centre').append(tweetHtml);
-    //             })
-    //             lastTime = Date.now();
-    //             console.log('imprimo el tweet.', data);
-    //         }
-    //     });
-    // }, 3000);
+        return {
+            /**
+             * Opens our dialog
+             * @param message Custom message
+             * @param options Custom options:
+             *                options.dialogSize - bootstrap postfix for dialog size, e.g. "sm", "m";
+             *                options.progressType - bootstrap postfix for progress bar type, e.g. "success", "warning".
+             */
+            show: function(message, options) {
+                // Assigning defaults
+                var settings = $.extend({
+                    dialogSize: 'm',
+                    progressType: ''
+                }, options);
+                if (typeof message === 'undefined') {
+                    message = 'Loading';
+                }
+                if (typeof options === 'undefined') {
+                    options = {};
+                }
+                // Configuring dialog
+                $dialog.find('.modal-dialog').attr('class', 'modal-dialog').addClass('modal-' + settings.dialogSize);
+                $dialog.find('.progress-bar').attr('class', 'progress-bar');
+                if (settings.progressType) {
+                    $dialog.find('.progress-bar').addClass('progress-bar-' + settings.progressType);
+                }
+                $dialog.find('h3').text(message);
+                // Opening dialog
+                $dialog.modal();
+            },
+            /**
+             * Closes dialog
+             */
+            hide: function() {
+                $dialog.modal('hide');
+            }
+        };
 
-    // function getHTMLforTweet(tweet) {
-    //     var elemHTML = $('<div></div>');
-    //     elemHTML.html('User:' + tweet.user.name +
-    //         '<br>' + tweet.text);
-    //     return elemHTML;
-    // }
+    })(jQuery);
 });

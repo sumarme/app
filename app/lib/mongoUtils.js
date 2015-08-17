@@ -1,10 +1,12 @@
 var MongoClient = require('mongodb').MongoClient;
-var logger = require('./logger.js');
+var logger = require('./logger.js'); //Manu, este es un complemente de express para guardar logs
+//Ale lo que hizo fue crear una funcion o algo asi en /lib/logger.js y ahí trajo algo de npm que sirve para esto que se
+//llama winston. 
 
 var _db;
 
 
-var mongoURL = (process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost:27017/') + 'departureTimes';
+var mongoURL = (process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost:27017/') + 'users';
 module.exports = {
     connectToServer: function(callback) {
         if (_db) {

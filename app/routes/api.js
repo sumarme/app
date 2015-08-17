@@ -3,11 +3,11 @@ var router = express.Router();
 var mongoUtils = require('../lib/mongoUtils');
 
 /* GET home page. */
-router.get('/posularme', function(req, res, next) {
-    // req.body recibo todo lo de JSON.stringify(ajax)
+router.post('/postularme', function(req, res, next) {
+    // req.body recibo todo lo de JSON.stringify(ajax) porque asi funciona express
     //inserto lo que recibi en MongoDB
     mongoUtils.connectToServer(function(err, db) {
-    	var user = req.body; //agregar id de cookie
+        var user = req.body; //agregar id de cookie
         db.collection('users').save(user, function(err, result) { //aca meto en mogoDB
             if (err) {
                 res.json({
@@ -18,7 +18,7 @@ router.get('/posularme', function(req, res, next) {
                 return;
             }
             res.json({
-            	result: true //puedo poner el mismo result
+                result: true //puedo poner el mismo result
             })
 
         });
@@ -28,8 +28,6 @@ router.get('/posularme', function(req, res, next) {
 
         //devuelvo un objeto con error o result dependiendo si fue exitoso o no
     });
-
-
 });
 
 module.exports = router;
