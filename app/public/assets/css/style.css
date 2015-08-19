@@ -19,6 +19,10 @@ header{
 .conteiner-menu{
 	margin: 2.5em 1em;
 }
+.dropdown-menu{
+    right: 0;
+    left: inherit;
+}
 
 section.portada{
 	background: url(../images/content.jpg) center center;
