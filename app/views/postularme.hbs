@@ -8,6 +8,7 @@
 </head>
 <body>
 	<!-- 	FACU todas las option de los imputs tienen un value = a la opcion asi cuando lo seleccionas el value es ese-->
+	<!-- EN TODOS LOS EJEMPLPOS EN LUGAR DE ID USAN NAME, YO POR LAS DUDAS LE PUSE LOS DOS, TE PEGO UN LINK DE EJEMPLOS DE LOS USOS PARA VALIDACIONES: http://formvalidation.io/examples/ -->
 	<!-- inicio header -->
 	<header class="header-principal">
 		<div class="conteiner-fluid">
@@ -57,7 +58,7 @@
 						<div class="input-group">
 							<div class="input-group-addon">Desde las</div>
 							<div>
-								<select class="form-control">
+								<select id="timeDesde" name="timeDesde" class="form-control">
 									<option value="00">00</option>
 									<option value="01">01</option>
 									<option value="02">02</option>
@@ -92,7 +93,7 @@
 						<div class="input-group">
 							<div class="input-group-addon">Hasta las</div>
 							<div>
-								<select class="form-control">
+								<select id="timeHasta" name="timeHasta" class="form-control">
 									<option value="00">00</option>
 									<option value="01">01</option>
 									<option value="02">02</option>
@@ -124,20 +125,20 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="timeHasta" class="sr-only">Donde vas a estar disponible para jugar</label>
+					<label for="ubicacionData" class="sr-only">Donde vas a estar disponible para jugar</label>
 					<h4>Donde vas a estar disponible para jugar</h1>					
 					<div class="input-group col-xs-12">
-						<select class="form-control">
+						<select id="ubicacionData" name="ubicacionData" class="form-control">
 							<option value="ubicacion">Usar mi ubicación</option>
 							<option value="direccion">Ingresar una ubicación</option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="timeHasta" class="sr-only">Hasta que distancia irias a jugar</label>
+					<label for="distancia" class="sr-only">Hasta que distancia irias a jugar</label>
 					<h4>Hasta que distancia irias a jugar</h1>
 					<div class="input-group">
-						<select class="form-control">
+						<select id="distancia" name="distancia" class="form-control">
 							<option value="01">01</option>
 							<option value="02">02</option>
 							<option value="03">03</option>
