@@ -11,6 +11,15 @@
 	<link href="assets/css/docs.css" rel="stylesheet" >
 </head>
 <body>
+	<script>
+	(function(d, s, id){
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
 	<!-- inicio header -->
 	<header class="header-principal">
 		<div class="conteiner-fluid">
@@ -23,7 +32,7 @@
 						<div class="dropdown">
 							<button class="btn dropdown-toggle" type="button"
 							id="dropdownMenu1" data-toggle="dropdown">
-								<span class="glyphicon glyphicon-align-justify"></span>
+							<span class="glyphicon glyphicon-align-justify"></span>
 							</button>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li role="presentation">
@@ -35,7 +44,7 @@
 								<li role="presentation">
 									<a role="menuitem" tabindex="-1" href="/#linkComoFunciona">¿como funciona?</a>
 								</li>
-							</ul>	
+							</ul>
 						</div>
 					</div>
 				</nav>
@@ -44,15 +53,20 @@
 	</header>
 	<!--fin de header-->
 	<!-- inicio content -->
-	<div class="myContainer">	
+	<div class="myContainer">
 		<section class="container">
 			<div class="conteiner">
 				<div class="col-xs-12">
 					<div class="form-group">
 						<span><h4>Utilizá tu cuenta de Facebook para ingresar a Sumarme</h4></span>
-						<a class="btn btn-block btn-social btn-default btn-facebook btn-grey">
-							<i class="fa fa-facebook"></i><h4 class="button">Ingresá con facebook</h4>
-						</a>
+						<!-- 						<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+						</fb:login-button> -->
+						<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false" onlogin="checkLoginState();"></div>
+						<div id="status">
+						</div>
+						<!-- <a class="btn btn-block btn-social btn-default btn-facebook btn-grey" id="fbLogin">
+														<i class="fa fa-facebook"></i><h4 class="button">Ingresá con facebook</h4>
+						</a> -->
 					</div>
 				</div>
 			</div>
@@ -90,8 +104,43 @@
 	</footer>
 	<!-- fin de footer -->
 	<!-- inicio javaScript -->
-<script src="vendor/js/jquery.js"></script>
-<script src="vendor/js/bootstrap.min.js"></script>
-<script src="assets/js/ingresa.js"></script>
-<!-- fin javaScript -->
+	<script src="vendor/js/jquery.js"></script>
+	<script src="vendor/js/bootstrap.min.js"></script>
+	<script>
+	function checkLoginState() {
+	FB.getLoginStatus(function(response) {
+	statusChangeCallback(response)
+	})
+	}
+	function statusChangeCallback(response) {
+	if (response.status === 'connected') {
+	function reqListener () {
+	console.log(this)
+	if(this.status === 200) {
+	console.log('login with facebook successful')
+	}
+	}
+	var oReq = new XMLHttpRequest()
+	oReq.onload = reqListener
+	oReq.open('get', '/store-fb-access-token?access_token=' + response.authResponse.accessToken, true)
+	oReq.send()
+	} else if (response.status === 'not_authorized') {
+	// The person is logged into Facebook, but not your app.
+	} else {
+	// The person is not logged into Facebook, so we're not sure if
+	// they are logged into this app or not.
+	}
+	}
+	</script>
+	<script src="//connect.facebook.net/en_US/all.js"></script>
+	<script>
+	FB.init({
+	appId      : '501734716657911',
+	cookie     : true,
+	xfbml      : true,
+	version    : 'v2.4'
+	})
+	</script>
+	<!-- // <script src="assets/js/ingresa.js"></script> -->
+	<!-- fin javaScript -->
 </body>
