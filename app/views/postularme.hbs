@@ -5,36 +5,61 @@
 	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+	<!-- inicio javaScript -->
+	<script src="vendor/js/jquery.js"></script>
+	<script src="vendor/js/bootstrap.min.js"></script>
+	<!-- fin javaScript -->
+	<!-- Social Buttons for Bootstrap -->
+	<link href="assets/css/bootstrap-social.css" rel="stylesheet" >
+	<link href="assets/css/font-awesome.css" rel="stylesheet">
+	<link href="assets/css/docs.css" rel="stylesheet" >
 </head>
 <body>
 	<!-- 	FACU todas las option de los imputs tienen un value = a la opcion asi cuando lo seleccionas el value es ese-->
 	<!-- EN TODOS LOS EJEMPLPOS EN LUGAR DE ID USAN NAME, YO POR LAS DUDAS LE PUSE LOS DOS, TE PEGO UN LINK DE EJEMPLOS DE LOS USOS PARA VALIDACIONES: http://formvalidation.io/examples/ -->
+
+	<head>
+	<title>{{title}}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,  maximum-scale=1.0">
+	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+	<!-- inicio javaScript -->
+	<script src="vendor/js/jquery.js"></script>
+	<script src="vendor/js/bootstrap.min.js"></script>
+	<!-- fin javaScript -->
+	<!-- Social Buttons for Bootstrap -->
+	<link href="assets/css/bootstrap-social.css" rel="stylesheet" >
+	<link href="assets/css/font-awesome.css" rel="stylesheet">
+	<link href="assets/css/docs.css" rel="stylesheet" >
+</head>
+<body>
 	<!-- inicio header -->
 	<header class="header-principal">
 		<div class="conteiner-fluid">
 			<div class="row">
 				<nav>
 					<div class="conteiner-brand col-xs-8">
-						<img class="img-responsive center-block" src="assets/images/sumarme.png" title="sumarme" alt="sumarme home">
+						<a href="/"><img class="img-responsive center-block" src="assets/images/sumarme.png" title="sumarme" alt="sumarme home"></a>
 					</div>
 					<div class="conteiner-menu col-xs-2">
 						<div class="dropdown">
 							<button class="btn dropdown-toggle" type="button"
 							id="dropdownMenu1" data-toggle="dropdown">
-							<span class="glyphicon glyphicon-align-justify">
-								</button>
-								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation">
-										<a role="menuitem" tabindex="-1" href="#">ingresá</a>
-									</li>
-									<li role="presentation">
-										<a role="menuitem" tabindex="-1" href="#">registrate</a>
-									</li>
-									<li role="presentation">
-										<a role="menuitem" tabindex="-1" href="#">¿como funciona?</a>
-									</li>
-								</ul>
-							</span>
+								<span class="glyphicon glyphicon-align-justify"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="ingresa">ingresar</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="registrate">registrame</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="/#linkComoFunciona">¿como funciona?</a>
+								</li>
+							</ul>	
 						</div>
 					</div>
 				</nav>
@@ -43,165 +68,177 @@
 	</header>
 	<!--fin de header-->
 	<!-- inicio content -->
-	<section class="container">
-		<form method="post" id="postularme">
-			<div class="columna-izq col-lg-6 col-md-6 col-sm-6">
-				<div class="form-group">
-					<h1>Completá los datos para postularte</h1>
-					<p>Una vez que te postules los usuarios que necesiten jugadores podrán verte y convocarte para su partido.</p>
-					<p>Cuando seas convocado recibirás los datos del partido y deberás confirmar tu asistencia.</p>
-				</div>
-				<div class="form-group">
-					<h4>Horario disponible para jugar</h1>
-					<label for="timeDesde" class="sr-only">Desde que hora estarás disponible para jugar</label>
+	<div class="myContainer">
+		<section class="container">
+			<form method="post" id="postularme">
+				<div class="columna-izq col-lg-6 col-md-6 col-sm-6">
 					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">Desde las</div>
-							<div>
-								<select id="timeDesde" name="timeDesde" class="form-control">
-									<option value="00">00</option>
-									<option value="01">01</option>
-									<option value="02">02</option>
-									<option value="03">03</option>
-									<option value="04">04</option>
-									<option value="05">05</option>
-									<option value="06">06</option>
-									<option value="07">07</option>
-									<option value="08">08</option>
-									<option value="09">09</option>
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
-									<option value="16">16</option>
-									<option value="17">17</option>
-									<option value="18">18</option>
-									<option value="19">19</option>
-									<option value="20">20</option>
-									<option value="21">21</option>
-									<option value="22">22</option>
-									<option value="23">23</option>
-								</select>
+						<h1>Completá los datos para postularte</h1>
+						<p>Una vez que te postules los usuarios que necesiten jugadores podrán verte y convocarte para su partido.</p>
+						<p>Cuando seas convocado recibirás los datos del partido y deberás confirmar tu asistencia.</p>
+					</div>
+					<div class="form-group">
+						<h4>Horario disponible para jugar</h1>
+						<label for="timeDesde" class="sr-only">Desde que hora estarás disponible para jugar</label>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">Desde las</div>
+								<div>
+									<select id="timeDesde" name="timeDesde" class="form-control">
+										<option value="00">00</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+									</select>
+								</div>
+								<div class="input-group-addon">HS</div>
 							</div>
-							<div class="input-group-addon">HS</div>
+						</div>
+						<label for="timeHasta" class="sr-only">Hasta que hora estarás disponible para jugar</label>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">Hasta las</div>
+								<div>
+									<select id="timeHasta" name="timeHasta" class="form-control">
+										<option value="00">00</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+									</select>
+								</div>
+								<div class="input-group-addon">HS</div>
+							</div>
 						</div>
 					</div>
-					<label for="timeHasta" class="sr-only">Hasta que hora estarás disponible para jugar</label>
 					<div class="form-group">
+						<label for="ubicacionData" class="sr-only">Donde vas a estar disponible para jugar</label>
+						<h4>Donde vas a estar disponible para jugar</h1>
+						<div class="input-group col-xs-12">
+							<select id="ubicacionData" name="ubicacionData" class="form-control">
+								<option value="ubicacion">Usar mi ubicación</option>
+								<option value="direccion">Ingresar una ubicación</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="distancia" class="sr-only">Hasta que distancia irias a jugar</label>
+						<h4>Hasta que distancia irias a jugar</h1>
 						<div class="input-group">
-							<div class="input-group-addon">Hasta las</div>
-							<div>
-								<select id="timeHasta" name="timeHasta" class="form-control">
-									<option value="00">00</option>
-									<option value="01">01</option>
-									<option value="02">02</option>
-									<option value="03">03</option>
-									<option value="04">04</option>
-									<option value="05">05</option>
-									<option value="06">06</option>
-									<option value="07">07</option>
-									<option value="08">08</option>
-									<option value="09">09</option>
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
-									<option value="16">16</option>
-									<option value="17">17</option>
-									<option value="18">18</option>
-									<option value="19">19</option>
-									<option value="20">20</option>
-									<option value="21">21</option>
-									<option value="22">22</option>
-									<option value="23">23</option>
-								</select>
-							</div>
-							<div class="input-group-addon">HS</div>
+							<select id="distancia" name="distancia" class="form-control">
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+								<option value="32">32</option>
+								<option value="33">33</option>
+								<option value="34">34</option>
+								<option value="35">35</option>
+								<option value="36">36</option>
+								<option value="37">37</option>
+								<option value="38">38</option>
+								<option value="39">39</option>
+								<option value="40">40</option>
+								<option value="41">41</option>
+								<option value="42">42</option>
+								<option value="43">43</option>
+								<option value="44">44</option>
+								<option value="45">45</option>
+								<option value="46">46</option>
+								<option value="47">47</option>
+								<option value="48">48</option>
+								<option value="49">49</option>
+								<option value="50">50</option>
+							</select>
+							<div class="input-group-addon">KMS</div>
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="ubicacionData" class="sr-only">Donde vas a estar disponible para jugar</label>
-					<h4>Donde vas a estar disponible para jugar</h1>					
-					<div class="input-group col-xs-12">
-						<select id="ubicacionData" name="ubicacionData" class="form-control">
-							<option value="ubicacion">Usar mi ubicación</option>
-							<option value="direccion">Ingresar una ubicación</option>
-						</select>
-					</div>
+					<button type="submit" data-toggle="modal" class="btn btn-default boton-envio  col-lg-12 col-md-12 col-xs-12"><h4 class="button">POSTULARME</h4></button>
 				</div>
-				<div class="form-group">
-					<label for="distancia" class="sr-only">Hasta que distancia irias a jugar</label>
-					<h4>Hasta que distancia irias a jugar</h1>
-					<div class="input-group">
-						<select id="distancia" name="distancia" class="form-control">
-							<option value="01">01</option>
-							<option value="02">02</option>
-							<option value="03">03</option>
-							<option value="04">04</option>
-							<option value="05">05</option>
-							<option value="06">06</option>
-							<option value="07">07</option>
-							<option value="08">08</option>
-							<option value="09">09</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
-							<option value="13">13</option>
-							<option value="14">14</option>
-							<option value="15">15</option>
-							<option value="16">16</option>
-							<option value="17">17</option>
-							<option value="18">18</option>
-							<option value="19">19</option>
-							<option value="20">20</option>
-							<option value="21">21</option>
-							<option value="22">22</option>
-							<option value="23">23</option>
-							<option value="24">24</option>
-							<option value="25">25</option>
-							<option value="26">26</option>
-							<option value="27">27</option>
-							<option value="28">28</option>
-							<option value="29">29</option>
-							<option value="30">30</option>
-							<option value="31">31</option>
-							<option value="32">32</option>
-							<option value="33">33</option>
-							<option value="34">34</option>
-							<option value="35">35</option>
-							<option value="36">36</option>
-							<option value="37">37</option>
-							<option value="38">38</option>
-							<option value="39">39</option>
-							<option value="40">40</option>
-							<option value="41">41</option>
-							<option value="42">42</option>
-							<option value="43">43</option>
-							<option value="44">44</option>
-							<option value="45">45</option>
-							<option value="46">46</option>
-							<option value="47">47</option>
-							<option value="48">48</option>
-							<option value="49">49</option>
-							<option value="50">50</option>
-						</select>
-						<div class="input-group-addon">KMS</div>
-					</div>
-				</div>
-			</div>
-		</div
-		<div class="form-group">
-			<button type="submit" data-toggle="modal" class="btn btn-default boton-envio  col-lg-12 col-md-12 col-xs-12">POSTULARME</button>
+			</form>
 		</div>
-	</div>
-</form>
-</section>
-<!-- fin content -->
+	</section>
+	<!-- fin content -->
+	<!-- inicio de footer -->
+	<footer class="footer">
+		<a class="btn btn-social-icon btn-lg btn-twitter btn-footer">
+			<i class="fa fa-twitter"></i>
+		</a>
+		<a class="btn btn-social-icon btn-lg btn-facebook btn-footer">
+			<i class="fa fa-facebook"></i>
+		</a>
+		
+		<span class="clearfix"></span>
+	</footer>
+	<!-- fin de footer -->
 </body>
 <!-- inicio javaScript -->
 <script src="vendor/js/jquery.js"></script>
