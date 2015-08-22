@@ -18,7 +18,7 @@ router.post('/postularme', function(req, res, next) {
                 return;
             }
             res.json({
-                result: true //puedo poner el mismo result
+                result: req.body//puedo poner el mismo result
             })
 
         });

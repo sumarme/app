@@ -1,5 +1,8 @@
 $(document).ready(function() {
     var ubicacion;
+    var disponibleDesde = document.getElementById("timeDesde");
+    var disponibleHasta = document.getElementById("timeHasta");
+    var distancia = document.getElementById("distancia");
 
     $('#postularme').on("submit", function(event) {
         // Evitar el refresh por default
@@ -13,13 +16,15 @@ $(document).ready(function() {
                 url: '/api/postularme',
                 data: JSON.stringify({
                     disponible: true,
+                    disponibleDesde: disponibleDesde.options[disponibleDesde.selectedIndex].value,
+                    disponibleHasta: disponibleHasta.options[disponibleHasta.selectedIndex].value,
                     timestamp: Date.now(),
                     user: 'mayor tom', //cambiar para que tome de un cookie
                     ubicacion: {
                         latitude: position.coords.latitude,
                         longitude: position.coords.longitude
                     },
-                    distancia: $('#dispDisponible').val()
+                    distancia: distancia.options[distancia.selectedIndex].value
                 }),
                 dataType: 'json',
                 contentType: 'json',
@@ -32,13 +37,13 @@ $(document).ready(function() {
                     //     location.reload();
                     //     return;
                     // }; // Confirmar/Error y redirigir al perfil del usuario
-                    console.log('Se hizo el post: ' + res);
                     window.location.replace("/"); // lo puse para que redirija hacia la homepage pero habría que pensar a donde queremos mandar al usuario
                 },
                 error: function(err) {
                     console.log('El error fue: ' + err);
                 }
             });
+            //console.log(JSON.stringify(disponibleDesde.options[disponibleDesde.selectedIndex].value));
             // socket.emit('getClosestStops', {
 
             // Comenté los dos de abajo porque los copié más arriba en .ajax
