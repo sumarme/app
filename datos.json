@@ -1,20 +1,19 @@
-users = {
-    "usuario1": {
+usersDb = {
+    {
         "nombre": "mayor tom",
-        "edad": "23",
+        "edad": 23,
         "puesto": "delantero",
-        "foto": "123"
-    },
-    "usuario1": {
+        "disponible": true
+    }, {
         "nombre": "kirk",
-        "edad": "26",
+        "edad": 26,
         "puesto": "delantero",
-        "foto": "124"
-    },
-    "usuario1": {
+        "disponible": true
+    }, {
         "nombre": "clark",
-        "edad": "28",
+        "edad": 28,
         "puesto": "delantero",
-        "foto": "124"
+        "disponible": false
     }
+
 }
