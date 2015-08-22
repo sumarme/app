@@ -6,7 +6,7 @@ var logger = require('./logger.js'); //Manu, este es un complemente de express p
 var _db;
 
 
-var mongoURL = (process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost:27017/') + 'users';
+var mongoURL = (process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost:27017/') + 'test';
 module.exports = {
     connectToServer: function(callback) {
         if (_db) {
