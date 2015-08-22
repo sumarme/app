@@ -8,7 +8,10 @@ router.post('/postularme', function(req, res, next) {
     //inserto lo que recibi en MongoDB
     mongoUtils.connectToServer(function(err, db) {
         var user = req.body; //agregar id de cookie
-        db.collection('users').save(user, function(err, result) { //aca meto en mogoDB
+
+        //aca meto en mogoDB
+        // db.collection('users').insert({"usuario1":{"nombre": "pepe"}});
+        db.collection('users').save(user, function(err, result) {
             if (err) {
                 res.json({
                     error: {
