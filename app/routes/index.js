@@ -21,4 +21,12 @@ router.get('/ingresa', function(req, res, next) {
 router.get('/perfil', function(req, res, next) {
   res.render('perfil', { title: 'Perfil' });
 });
+
+router.get('/editPerfil', function(req, res, next) {
+  res.render('editPerfil', { title: 'Editear perfil' });
+});
+
+router.get('/seleccion', function(req, res, next) {
+  res.render('seleccion', { title: 'Buscar jugadores' });
+});
 module.exports = router;

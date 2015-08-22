@@ -99,6 +99,7 @@ h4.button{
     color: #ffffff;
     font-size: 1,3em;
     font-weight: bold;
+    text-align: center;
 }
 a h4.button{
     color: #ffffff;
@@ -139,3 +140,8 @@ a.btn-footer{
 .help-block{
     color: #fff;
 }
+
+.dia, .mes, .year{
+    display: inline-block;
+}
+

@@ -31,10 +31,13 @@
 							</button>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="ingresa">Postularme</a>
+									<a role="menuitem" tabindex="-1" href="perfil">Mi perfil</a>
 								</li>
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="registrate">Buscar jugador</a>
+									<a role="menuitem" tabindex="-1" href="postularme">Postularme</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="seleccion">Buscar jugador</a>
 								</li>
 								<li role="presentation">
 									<a role="menuitem" tabindex="-1" href="/">Salir</a>
@@ -57,8 +60,11 @@
 				</div>
 				<div class="col-xs-5" id="foto">
 					<img src="assets/images/foto.jpg" class="img-responsive" alt="foto">
-					<button type="submit" data-toggle="modal" class="btn btn-default boton-envio  col-lg-12 col-md-12 col-xs-12"><h4 class="button">Editar</h4></button>
-					<p class="help-block">Cambiá tu foto, descripción o tus datos para mantenerlos actualizados</p>
+					<div class="form-group">
+						<a href="editPerfil" class="btn btn-default  col-xs-12" role="button"><h4 class="button">Editar</h4></a>
+						<p class="help-block">Cambiá tu foto, descripción o tus datos para mantenerlos actualizados</p>
+					</div>
+
 				</div>
 				<div class="col-xs-7">
 					<textarea class="form-control" rows="10" id="descripcion" placeholder="Describí en 140 caracteres como jugás" name="descripcion" value='' required></textarea>
