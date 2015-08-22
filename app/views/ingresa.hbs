@@ -27,7 +27,7 @@
 						<div class="dropdown">
 							<button class="btn dropdown-toggle" type="button"
 							id="dropdownMenu1" data-toggle="dropdown">
-							<span class="glyphicon glyphicon-align-justify"></span>
+								<span class="glyphicon glyphicon-align-justify"></span>
 							</button>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li role="presentation">
@@ -37,9 +37,9 @@
 									<a role="menuitem" tabindex="-1" href="registrate">registrame</a>
 								</li>
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="#linkComoFunciona">¿como funciona?</a>
+									<a role="menuitem" tabindex="-1" href="/#linkComoFunciona">¿como funciona?</a>
 								</li>
-							</ul>
+							</ul>	
 						</div>
 					</div>
 				</nav>
@@ -48,57 +48,39 @@
 	</header>
 	<!--fin de header-->
 	<!-- inicio content -->
-	<div class="wrap">
-		<section class="portada">
-			<div class="conteiner-fluid">
-				<div class="row">
-					<div class="col-xs-11">
-						<h1>Se bajó uno?</h1>
-						<h2>Encontrá el
-						<br>jugar que te falta</h2>
+	<div class="myContainer">	
+		<section class="container">
+			<div class="conteiner">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<span><h4>Utilizá tu cuenta de Facebook para ingresar a Sumarme</h4></span>
+						<a class="btn btn-block btn-social btn-default btn-facebook btn-grey">
+							<i class="fa fa-facebook"></i><h4 class="button">Ingresá con facebook</h4>
+						</a>
 					</div>
 				</div>
 			</div>
+			<form method="post" id="postularme">
+				<div class="col-xs-12">
+					<label for="inputEmail" class=" control-label"><h4>Ingresá tu email</h1></label>
+				</div>
+				<div class="col-xs-12">
+					<input type="email" class="form-control" id="inputEmail" placeholder="tuemail@ejemplo.com" name='email' value='' required>
+				</div>
+				<label for="inputPassword" class="col-lg-2 control-label"><h4>Ingresá tu contraseña</h4></label>
+				<div class="col-xs-12">
+					<input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" name='password' value='' required>
+				</div>
+				<div class="col-xs-12">
+				</div>
+				<div class="form-group col-xs-12">
+					<button type="submit" data-toggle="modal" class="btn btn-default boton-envio  col-lg-12 col-md-12 col-xs-12"><h4 class="button">INGRESAR</h4></button>
+					<a href="registrate" class="btn btn-default btn-lg col-xs-12" role="button"><h4 class="button">REGISTRARME</h4></a>
+				</div>
+			</form>
 		</section>
-	</div>
-	<div class="col-xs-12">
-		<div class="form-group">
-			<a href="ingresa" class="btn btn-default btn-lg col-xs-12" role="button"><h4 class="button">INGRESAR</h4></a>
-			<a href="registrate" class="btn btn-default btn-lg col-xs-12" role="button"><h4 class="button">REGISTRARME</h4></a>
-		</div>
 	</div>
 	<!-- fin content -->
-	
-	<!-- inicio de como funciona -->
-	<div class="comoFunciona" id="linkComoFunciona">
-		<section class="content">
-			<div class="conteiner-fluid">
-				<div class="row">
-					<div class="conteiner">
-						<h1 class="titulo">¿Como funciona?</h1>
-					</div>
-					<div class="container col-xs-12">
-						<span class="steps">&#9312 </span><p class="texto"> Registrate y creá tu perfil, es gratis y podés usar tu cuenta de facebook</p>
-					</div>
-					<div class="container col-xs-12">
-						<span class="steps">&#9313</span><p class="texto">  Si te falta uno, mirá los jugadores disponibles en la zona y elegí a quien
-						convocas</p>
-					</div>
-					<div class="container col-xs-12">
-						<span class="steps">&#9314 </span><p class="texto">Si querés jugar y no tenés equipo, postulate como jugador disponible y esperá ser convocado</p>
-					</div>
-					<div class="conteiner col-xs-12">
-						<div class="important">
-							<h1>Importante!</h1>
-							<p>El jugador convocado NO DEBE PAGAR la cancha.
-							El gasto de la cancha deberá correr por parte del resto del equipo.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-	<!-- fin de como funciona -->
 	<!-- inicio de footer -->
 	<footer class="footer">
 		<a class="btn btn-social-icon btn-lg btn-twitter btn-footer">

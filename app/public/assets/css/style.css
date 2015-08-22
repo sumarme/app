@@ -24,12 +24,13 @@ header{
     left: inherit;
 }
 
+
+/*comienza el css del home*/
 section.portada{
 	background: url(../images/content.jpg) center center;
 	background-size: cover;
 	min-height: 38em ;
 }
-
 section.portada h1 {
     font-family: sans-serif;
     font-weight: 800;
@@ -51,4 +52,90 @@ section.portada h2 {
     padding-left: 5%;
     padding-right: 5%;
     text-shadow: 0.1em 0.1em 0.1em #000;
+}
+.myContainer{
+    background-color: #306fa2;
+    min-height: 47em ;
+    color: #ffffff;
+}
+
+/*como funciona*/
+.comoFunciona{
+    background-color: #306fa2;
+}
+.comoFunciona{
+    color: #ffffff;
+}
+.comoFunciona h1.titulo{
+    margin-top: 5em;
+    margin-left: 1em;
+    color: #ffffff;
+    font-weight: bold;
+}
+.comoFunciona p.texto{
+    font-size: 2em;
+    margin-left: 3em;
+    padding-top: 1em;
+}
+span.steps{
+    font-size: 8em;
+    float: left;
+}
+.important{
+    padding: 11px;
+}
+.important p{
+    font-size: 2em; 
+}
+.important h1{
+    padding-left: 0;
+    font-weight: bold; 
+}
+
+
+
+/*buttons*/
+h4.button{
+    color: #ffffff;
+    font-size: 1,3em;
+    font-weight: bold;
+}
+a h4.button{
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+}
+.btn-default{
+    background: #353535;
+    margin-top: 1em;
+}
+
+/*social icons*/
+a.btn-grey{
+    color: #ffffff;
+    background: #353535;
+}
+
+/*footer*/
+.footer{
+    background-color: #353535;   
+}
+.footer button{
+    float: right;
+}
+a.btn-footer{
+    position: relative;
+    color: #ffffff;
+    background: #306fa2;
+    float: right;
+    margin: auto 10px auto 0;
+    /*font-size: 2em;*/
+}
+
+/*perfil de usuario*/
+.descripcion{
+    float: right;
+}
+.help-block{
+    color: #fff;
 }

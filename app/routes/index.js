@@ -14,4 +14,11 @@ router.get('/postularme', function(req, res, next) {
   res.render('postularme', { title: 'Postularme' });
 });
 
+router.get('/ingresa', function(req, res, next) {
+  res.render('ingresa', { title: 'Ingresa' });
+});
+
+router.get('/perfil', function(req, res, next) {
+  res.render('perfil', { title: 'Perfil' });
+});
 module.exports = router;
