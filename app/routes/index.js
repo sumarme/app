@@ -29,4 +29,9 @@ router.get('/editPerfil', function(req, res, next) {
 router.get('/seleccion', function(req, res, next) {
   res.render('seleccion', { title: 'Buscar jugadores' });
 });
+
+router.get('/busqueda', function(req, res, next) {
+  res.render('busqueda', { title: 'Filtro de busqueda' });
+});
+
 module.exports = router;

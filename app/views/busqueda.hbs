@@ -1,0 +1,392 @@
+<head>
+	<title>{{title}}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,  maximum-scale=1.0">
+	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+	<!-- Social Buttons for Bootstrap -->
+	<link href="assets/css/bootstrap-social.css" rel="stylesheet" >
+	<link href="assets/css/font-awesome.css" rel="stylesheet">
+	<link href="assets/css/docs.css" rel="stylesheet" >
+</head>
+<body>
+	<!-- inicio header -->
+	<header class="header-principal">
+		<div class="conteiner-fluid">
+			<div class="row">
+				<nav>
+					<div class="conteiner-brand col-xs-8">
+						<a href="/"><img class="img-responsive center-block" src="assets/images/sumarme.png" title="sumarme" alt="sumarme home"></a>
+					</div>
+					<div class="conteiner-menu col-xs-2">
+						<div class="dropdown">
+							<button class="btn dropdown-toggle" type="button"
+							id="dropdownMenu1" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-align-justify"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="perfil">Mi perfil</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="postularme">Postularme</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="seleccion">Buscar jugador</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="/">Salir</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<!--fin de header-->
+	<!-- inicio content -->
+	<div class="myContainer">
+		<section class="container">
+			<form method="post" id="postularme">
+				<div class="columna-izq col-lg-6 col-md-6 col-sm-6">
+					<div class="form-group">
+						<label for="sexo" class="sr-only">Sexo</label>
+						<h4>Sexo</h1>
+						<div class="input-group col-xs-12">
+							<select id="ubicacionData" name="ubicacionData" class="form-control">
+								<option value="hombre">Hombre</option>
+								<option value="mujer">Mujer</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Puesto" class="sr-only">Puesto</label>
+						<h4>Puesto</h1>
+						<div class="input-group col-xs-12">
+							<select id="ubicacionData" name="ubicacionData" class="form-control">
+								<option value="indistinto">Indistinto</option>
+								<option value="arquero">Arquero</option>
+								<option value="defensor">Defensor</option>
+								<option value="medioCapista">Mediocampista</option>
+								<option value="delantero">Delantero</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<h4>Horario del partido</h1>
+						<label for="inicio" class="sr-only">Horario del partido</label>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">Desde las</div>
+								<div>
+									<select id="timeDesde" name="timeDesde" class="form-control">
+										<option value="00">00</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+									</select>
+								</div>
+								<div class="input-group-addon">HS</div>
+							</div>
+						</div>
+						<label for="hasta" class="sr-only">Hasta que hora es el partido</label>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">Hasta las</div>
+								<div>
+									<select id="timeHasta" name="timeHasta" class="form-control">
+										<option value="00">00</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+									</select>
+								</div>
+								<div class="input-group-addon">HS</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<h4>Elegí el rango de edad del jugador que buscas</h4>
+						<label for="edadDesde" class="sr-only">Elegí el rango de edad del jugador que buscas</label>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">Desde</div>
+								<div>
+									<select id="edadDesde" name="edadDesde" class="form-control">
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+										<option value="24">24</option>
+										<option value="25">25</option>
+										<option value="26">26</option>
+										<option value="27">27</option>
+										<option value="28">28</option>
+										<option value="29">29</option>
+										<option value="30">30</option>
+										<option value="31">31</option>
+										<option value="32">32</option>
+										<option value="33">33</option>
+										<option value="34">34</option>
+										<option value="35">35</option>
+										<option value="36">36</option>
+										<option value="37">37</option>
+										<option value="38">38</option>
+										<option value="39">39</option>
+										<option value="40">40</option>
+										<option value="41">41</option>
+										<option value="42">42</option>
+										<option value="43">43</option>
+										<option value="44">44</option>
+										<option value="45">45</option>
+										<option value="46">46</option>
+										<option value="47">47</option>
+										<option value="48">48</option>
+										<option value="49">49</option>
+										<option value="50">50</option>
+										<option value="51">51</option>
+										<option value="52">52</option>
+										<option value="53">53</option>
+										<option value="54">54</option>
+										<option value="55">55</option>
+										<option value="56">56</option>
+										<option value="57">57</option>
+										<option value="58">58</option>
+										<option value="59">59</option>
+										<option value="60">60</option>
+										<option value="61">61</option>
+										<option value="62">62</option>
+										<option value="63">63</option>
+										<option value="64">64</option>
+										<option value="65">65</option>
+										<option value="66">66</option>
+										<option value="67">67</option>
+										<option value="68">68</option>
+										<option value="69">69</option>
+									</select>
+								</div>
+								<div class="input-group-addon">años</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group col-xs-12">
+								<div class="input-group-addon">Hasta</div>
+								<div>
+									<select id="edadHasta" name="edadHasta" class="form-control">
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+										<option value="24">24</option>
+										<option value="25">25</option>
+										<option value="26">26</option>
+										<option value="27">27</option>
+										<option value="28">28</option>
+										<option value="29">29</option>
+										<option value="30">30</option>
+										<option value="31">31</option>
+										<option value="32">32</option>
+										<option value="33">33</option>
+										<option value="34">34</option>
+										<option value="35">35</option>
+										<option value="36">36</option>
+										<option value="37">37</option>
+										<option value="38">38</option>
+										<option value="39">39</option>
+										<option value="40">40</option>
+										<option value="41">41</option>
+										<option value="42">42</option>
+										<option value="43">43</option>
+										<option value="44">44</option>
+										<option value="45">45</option>
+										<option value="46">46</option>
+										<option value="47">47</option>
+										<option value="48">48</option>
+										<option value="49">49</option>
+										<option value="50">50</option>
+										<option value="51">51</option>
+										<option value="52">52</option>
+										<option value="53">53</option>
+										<option value="54">54</option>
+										<option value="55">55</option>
+										<option value="56">56</option>
+										<option value="57">57</option>
+										<option value="58">58</option>
+										<option value="59">59</option>
+										<option value="60">60</option>
+										<option value="61">61</option>
+										<option value="62">62</option>
+										<option value="63">63</option>
+										<option value="64">64</option>
+										<option value="65">65</option>
+										<option value="66">66</option>
+										<option value="67">67</option>
+										<option value="68">68</option>
+										<option value="69">69</option>
+									</select>
+								</div>
+								<div class="input-group-addon">años</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="sexo" class="sr-only">Donde es el partido</label>
+							<h4>Donde es el partido</h1>
+							<div class="input-group col-xs-12">
+								<select id="ubicacionData" name="ubicacionData" class="form-control">
+									<option value="miUbicacion">Usar mi ubicación</option>
+									<option value="direccion">Colocar dirección</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-group">
+								<label for="distancia" class="sr-only">Hasta que distancia buscás jugador</label>
+								<h4>Hasta que distancia buscás jugador</h1>
+								<div class="input-group">
+									<select id="distancia" name="distancia" class="form-control">
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+										<option value="24">24</option>
+										<option value="25">25</option>
+										<option value="26">26</option>
+										<option value="27">27</option>
+										<option value="28">28</option>
+										<option value="29">29</option>
+										<option value="30">30</option>
+										<option value="31">31</option>
+										<option value="32">32</option>
+										<option value="33">33</option>
+										<option value="34">34</option>
+										<option value="35">35</option>
+										<option value="36">36</option>
+										<option value="37">37</option>
+										<option value="38">38</option>
+										<option value="39">39</option>
+										<option value="40">40</option>
+										<option value="41">41</option>
+										<option value="42">42</option>
+										<option value="43">43</option>
+										<option value="44">44</option>
+										<option value="45">45</option>
+										<option value="46">46</option>
+										<option value="47">47</option>
+										<option value="48">48</option>
+										<option value="49">49</option>
+										<option value="50">50</option>
+									</select>
+									<div class="input-group-addon">KMS</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" data-toggle="modal" class="btn btn-default boton-envio  col-lg-12 col-md-12 col-xs-12"><h4 class="button">POSTULARME</h4></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<!-- fin content -->
+	<!-- inicio de footer -->
+	<footer class="footer">
+		<a class="btn btn-social-icon btn-lg btn-twitter btn-footer">
+			<i class="fa fa-twitter"></i>
+		</a>
+		<a class="btn btn-social-icon btn-lg btn-facebook btn-footer">
+			<i class="fa fa-facebook"></i>
+		</a>
+		
+		<span class="clearfix"></span>
+	</footer>
+	<!-- fin de footer -->
+</body>
+<!-- inicio javaScript -->
+<script src="vendor/js/jquery.js"></script>
+<script src="vendor/js/bootstrap.min.js"></script>
+<script src="assets/js/postularme.js"></script>
+<script src="vendor/js/jquery.js"></script>
+<script src="vendor/js/bootstrap.min.js"></script>
+<!-- fin javaScript -->
