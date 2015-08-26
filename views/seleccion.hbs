@@ -7,8 +7,14 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
 	<!-- inicio javaScript -->
 	<script src="vendor/js/jquery.js"></script>
+	<script src="assets/js/actions.js"></script>
     <script src="vendor/js/bootstrap.min.js"></script>
     <!-- fin javaScript -->
+    <script id="userId" type="text/json">
+    {
+    	currentUser: req.cookie.userViewed;
+    }
+    </script>
 
 </head>
 
@@ -53,14 +59,14 @@
     			<img src="assets/images/futbol-stars.jpg" class="img-responsive" alt="">
     		</div>
     		<div>
-    			<h2>{{user}}</h2>
-    			<h2>{{title}}</h2>
+    			<h2 id="nombreUser">{{user.nombre}}</h2>
+    			<h2>{{user.disponible}}</h2>
     		</div>
     		<div class="container-description">
     			<p class="col-xs-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus praesentium, ratione reiciendis pariatur sint repudiandae rerum sequi vitae, suscipit modi, voluptatum accusantium recusandae magni cum unde optio. Esse, suscipit, necessitatibus.</p>
 
-    			<img src="assets/images/ok.jpg" class="img-responsive col-xs-6" alt="">
-    			 <img src="assets/images/false.jpg" class="img-responsive col-xs-6" alt="">
+    			<button id="ok"><img src="assets/images/ok.jpg" class="img-responsive col-xs-6" alt=""></button>
+    			 <button id="notOk"><img src="assets/images/false.jpg" class="img-responsive col-xs-6" alt=""></button>
 
     		</div>
 
