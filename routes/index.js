@@ -8,29 +8,6 @@ var ObjectID = require('mongodb').ObjectID;
 
 //var db = mongoUtils.getDB();
 
-/*var dbH = [{
-    users = {
-        "usuario1": {
-            "nombre": "mayor tom",
-            "edad": "23",
-            "puesto": "delantero",
-            "foto": "123"
-        },
-        "usuario1": {
-            "nombre": "kirk",
-            "edad": "26",
-            "puesto": "delantero",
-            "foto": "124"
-        },
-        "usuario1": {
-            "nombre": "clark",
-            "edad": "28",
-            "puesto": "delantero",
-            "foto": "124"
-        }
-    }
-}]*/
-
 
 
 /* GET home page. */
