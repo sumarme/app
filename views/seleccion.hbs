@@ -21,10 +21,13 @@
 	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
-	<!-- inicio javaScript -->
-	<script src="vendor/js/jquery.js"></script>
-	<script src="vendor/js/bootstrap.min.js"></script>
+	<script src="assets/js/actions.js"></script>
 	<!-- fin javaScript -->
+	<script id="userId" type="text/json">
+	{
+		currentUser: req.cookie.userViewed;
+	}
+	</script>
 </head>
 <body>
 	<!-- inicio header -->
@@ -40,66 +43,62 @@
 							<button class="btn dropdown-toggle" type="button"
 							id="dropdownMenu1" data-toggle="dropdown">
 							<span class="glyphicon glyphicon-align-justify">
-								</button>
-								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation">
-										<a role="menuitem" tabindex="-1" href="perfil">Mi perfil</a>
-									</li>
-									<li role="presentation">
-										<a role="menuitem" tabindex="-1" href="postularme">Postularme</a>
-									</li>
-									<li role="presentation">
-										<a role="menuitem" tabindex="-1" href="seleccion">Buscar jugador</a>
-									</li>
-									<li role="presentation">
-										<a role="menuitem" tabindex="-1" href="/">Salir</a>
-									</li>
-								</ul>
-							</div>
+							</span>
+							</button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="perfil">Mi perfil</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="postularme">Postularme</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="seleccion">Buscar jugador</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="/">Salir</a>
+								</li>
+							</ul>
 						</div>
-					</nav>
-				</div>
+					</div>
+				</nav>
 			</div>
-		</header>
-		<!--fin de header-->
-		<!-- inicio content -->
-		<section class="myContainer">
-			<div class="row">
-				<div class="container">
-					<img src="assets/images/foto.jpg" class="img-responsive center-block" alt="">
-				</div>
-				<div class="container">
-					<div class="col-xs-12">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus praesentium, ratione reiciendis pariatur sint repudiandae rerum sequi vitae, suscipit modi, voluptatum accusantium recusandae magni cum unde optio. Esse, suscipit, necessitatibus.</p>
-					</div>
-				</div>
-				<div class="col-xs-12">
-					<div class="conteiner col-xs-6">
-						<a href="#"><img class="img-responsive btn" src="assets/images/noIcon.png" title="no" alt="no convocar" id="no"></a>
-					</div>
-					<span></span>
-					<div class="conteiner col-xs-6">
-						<a href="#"><img class="img-responsive btn" src="assets/images/yesIcon.png" title="yes" alt="convocar" id="yes"></a>
-					</div>
-				</div>
+		</div>
+	</header>
+	<!--fin de header-->
+	<!-- inicio content -->
+	<section class="container">
+		<div class="row">
+			<div class="container-foto">
+				<img src="assets/images/futbol-stars.jpg" class="img-responsive" alt="">
 			</div>
-		</section>
-		<!-- fin content -->
-		<!-- inicio de footer -->
-		<footer class="footer">
-			<a class="btn btn-social-icon btn-lg btn-twitter btn-footer">
-				<i class="fa fa-twitter"></i>
-			</a>
-			<a class="btn btn-social-icon btn-lg btn-facebook btn-footer">
-				<i class="fa fa-facebook"></i>
-			</a>
-			
-			<span class="clearfix"></span>
-		</footer>
-		<!-- fin de footer -->
-	</body>
-	<!-- inicio javaScript -->
-	<script src="vendor/js/jquery.js"></script>
-	<script src="vendor/js/bootstrap.min.js"></script>
-	<script src="assets/js/postularme.js"></script>
-	<!-- fin javaScript -->
+			<div>
+				<h2 id="nombreUser">{{user.nombre}}</h2>
+				<h2>{{user.disponible}}</h2>
+			</div>
+			<div class="container-description">
+				<p class="col-xs-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus praesentium, ratione reiciendis pariatur sint repudiandae rerum sequi vitae, suscipit modi, voluptatum accusantium recusandae magni cum unde optio. Esse, suscipit, necessitatibus.</p>
+				<button id="ok"><img src="assets/images/ok.jpg" class="img-responsive col-xs-6" alt=""></button>
+				<button id="notOk"><img src="assets/images/false.jpg" class="img-responsive col-xs-6" alt=""></button>
+			</div>
+		</div>
+	</section>
+	<!-- fin content -->
+	<!-- inicio de footer -->
+	<footer class="footer">
+		<a class="btn btn-social-icon btn-lg btn-twitter btn-footer">
+			<i class="fa fa-twitter"></i>
+		</a>
+		<a class="btn btn-social-icon btn-lg btn-facebook btn-footer">
+			<i class="fa fa-facebook"></i>
+		</a>
+		
+		<span class="clearfix"></span>
+	</footer>
+	<!-- fin de footer -->
+</body>
+<!-- inicio javaScript -->
+<script src="vendor/js/jquery.js"></script>
+<script src="vendor/js/bootstrap.min.js"></script>
+<script src="assets/js/postularme.js"></script>
+<!-- fin javaScript -->
