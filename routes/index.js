@@ -1,45 +1,54 @@
 var express = require('express');
 var router = express.Router();
 
-var mongoUtils = require('../lib/mongoUtils.js');
-var db = mongoUtils.getDB();
-
-
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', {
-        title: 'Express'
+        title: 'Sumarme'
     });
 });
 
 router.get('/registrate', function(req, res, next) {
     res.render('registrate', {
-        title: 'Express'
+        title: 'Registrarme'
+    });
+});
+
+router.get('/postularme', function(req, res, next) {
+    res.render('postularme', {
+        title: 'Postularme'
+    });
+});
+
+router.get('/ingresa', function(req, res, next) {
+    res.render('ingresa', {
+        title: 'Ingresa'
+    });
+});
+
+router.get('/perfil', function(req, res, next) {
+    res.render('perfil', {
+        title: 'Perfil'
+    });
+    res.cookie("userViewed", []);
+});
+
+router.get('/editPerfil', function(req, res, next) {
+    res.render('editPerfil', {
+        title: 'Editear perfil'
     });
 });
 
 router.get('/seleccion', function(req, res, next) {
-
-    var filter = {
-        disponible: true
-    };
-
-    db.collection('users').findOne(filter, function(err, user) {
-
-        if (err) {
-            // template de errores
-            return res.render('error', {
-                error: err
-            });
-        }
-        res.render('seleccion', {
-            title: 'Selecciones',
-            user: user
-        });
-
+    res.render('seleccion', {
+        title: 'Buscar jugadores'
     });
+});
 
+router.get('/busqueda', function(req, res, next) {
+    res.render('busqueda', {
+        title: 'Filtro de busqueda'
+    });
 });
 
 module.exports = router;

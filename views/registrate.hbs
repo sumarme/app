@@ -7,11 +7,13 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
 	<!-- inicio javaScript -->
 	<script src="vendor/js/jquery.js"></script>
-    <script src="vendor/js/bootstrap.min.js"></script>
-    <!-- fin javaScript -->
-
+	<script src="vendor/js/bootstrap.min.js"></script>
+	<!-- fin javaScript -->
+	<!-- Social Buttons for Bootstrap -->
+	<link href="assets/css/bootstrap-social.css" rel="stylesheet" >
+	<link href="assets/css/font-awesome.css" rel="stylesheet">
+	<link href="assets/css/docs.css" rel="stylesheet" >
 </head>
-
 <body>
 	<!-- inicio header -->
 	<header class="header-principal">
@@ -19,25 +21,25 @@
 			<div class="row">
 				<nav>
 					<div class="conteiner-brand col-xs-8">
-						<img class="img-responsive center-block" src="assets/images/sumarme.png" title="sumarme" alt="sumarme home">
+						<a href="/"><img class="img-responsive center-block" src="assets/images/sumarme.png" title="sumarme" alt="sumarme home"></a>
 					</div>
 					<div class="conteiner-menu col-xs-2">
 						<div class="dropdown">
 							<button class="btn dropdown-toggle" type="button"
-							 		id="dropdownMenu1" data-toggle="dropdown">
-									<span class="glyphicon glyphicon-align-justify">
+							id="dropdownMenu1" data-toggle="dropdown">
+								<span class="glyphicon glyphicon-align-justify"></span>
 							</button>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="#">ingresá</a>
+									<a role="menuitem" tabindex="-1" href="ingresa">ingresar</a>
 								</li>
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="#">registrate</a>
+									<a role="menuitem" tabindex="-1" href="registrate">registrame</a>
 								</li>
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="#">¿como funciona?</a>
+									<a role="menuitem" tabindex="-1" href="/#linkComoFunciona">¿como funciona?</a>
 								</li>
-							</ul>			
+							</ul>	
 						</div>
 					</div>
 				</nav>
@@ -45,29 +47,43 @@
 		</div>
 	</header>
 	<!--fin de header-->
-
 	<!-- inicio content -->
-	<section class="container">
-     <form action="php/envia.php" method="post">
-     <div class="columna-izq col-lg-6 col-md-6 col-sm-6">
-         
-         <div class="form-group">
-           <label for="exampleInputName2">Nombre <span>*</span></label>
-           <input type="text" class="form-control" id="exampleInputName2" placeholder="Nombre" name='nombre' value='' required>
-         </div>
-         <div class="form-group">
-           <label for="exampleInputEmail1">E-mail <span>*</span></label>
-           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name='email' value='' required>
-         </div>
-          <div class="form-group">
-           <label for="tel">Teléfono</label>
-           <input type="text" class="form-control" id="tel" placeholder="Teléfono" name='telefono' >
-         </div>
-
-           <button type="submit" data-toggle="modal" data-target='' class="btn btn-default boton-envio  col-lg-12 col-md-12 col-xs-12">ENVIAR</button>
-         </div>
-        
-
+	<div class="myContainer">
+		
+		<section class="container">
+			<form method="post" id="postularme">
+				<div class="col-xs-12">
+					<label for="inputEmail" class=" control-label"><h4>Ingresá tu email</h1></label>
+				</div>
+				<div class="col-xs-12">
+					<input type="email" class="form-control" id="inputEmail" placeholder="tuemail@ejemplo.com" name='email' value='' required>
+				</div>
+				<label for="inputPassword" class="col-lg-2 control-label"><h4>Ingresá tu contraseña</h4></label>
+				<div class="col-xs-12">
+					<input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" name='password' value='' required>
+				</div>
+				<label for="inputPassword" class="col-lg-2 control-label"><h4>Confirma tu contraseña</h4></label>
+				<div class="col-xs-12">
+					<input type="password" class="form-control" id="inputPassword" placeholder="Confirma tu contraseña" name='password' value='' required>
+				</div>
+				<div class="form-group col-xs-12">
+					<button type="submit" data-toggle="modal" class="btn btn-default boton-envio  col-lg-12 col-md-12 col-xs-12"><h4 class="button">INGRESAR</h4></button>
+					<a href="registrate" class="btn btn-default btn-lg col-xs-12" role="button"><h4 class="button">REGISTRARME</h4></a>
+				</div>
+			</form>
+		</section>
+	</div>
 	<!-- fin content -->
-
+	<!-- inicio de footer -->
+	<footer class="footer">
+		<a class="btn btn-social-icon btn-lg btn-twitter btn-footer">
+			<i class="fa fa-twitter"></i>
+		</a>
+		<a class="btn btn-social-icon btn-lg btn-facebook btn-footer">
+			<i class="fa fa-facebook"></i>
+		</a>
+		
+		<span class="clearfix"></span>
+	</footer>
+	<!-- fin de footer -->
 </body>

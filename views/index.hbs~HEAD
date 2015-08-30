@@ -1,0 +1,86 @@
+<head>
+	<title>{{title}}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,  maximum-scale=1.0">
+	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+	<!-- inicio javaScript -->
+	<script src="vendor/js/jquery.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    <!-- fin javaScript -->
+
+</head>
+
+<body>
+	<!-- inicio header -->
+	<header class="header-principal">
+		<div class="conteiner-fluid">
+			<div class="row">
+				<nav>
+					<div class="conteiner-brand col-xs-8">
+						<img class="img-responsive center-block" src="assets/images/sumarme.png" title="sumarme" alt="sumarme home">
+					</div>
+					<div class="conteiner-menu col-xs-2">
+						<div class="dropdown">
+							<button class="btn dropdown-toggle" type="button"
+							 		id="dropdownMenu1" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-align-justify">
+							</button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">ingresá</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">registrate</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">¿como funciona?</a>
+								</li>
+							</ul>			
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<!--fin de header-->
+
+	<!-- inicio content -->
+	<div class="wrap">
+		<section class="portada">
+			<div class="conteiner-fluid">
+				<div class="row">
+					<div class="col-xs-11">
+						<h1>Se bajó uno?</h1>
+						<h2>Encontrá el
+						<br>jugar que te falta</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- fin content -->
+	
+	<!-- inicio de como funciona -->
+	<section class="comoFunciona">
+		<div class="conteiner-fluid">
+			<div class="row">
+				<div class="conteiner-tittle">
+					<h1>¿como funciona?</h1>
+				</div>
+				<div class="container-tipo col-xs-12">
+				<p><span class="steps">&#9312 </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia, ipsam cumque veniam.</p>
+				</div>
+				<div class="container-tipo espaciado col-xs-12">
+				<p> <span class="steps">&#9313</span> Officia optio libero recusandae nostrum quidem voluptates impedit asperiores cumque beatae quo facere quibusdam neque, harum ratione ab qui, cum nesciunt sunt.</p>
+				</div>
+				<div class="container-tipo  col-xs-12">
+				<p><span class="steps">&#9314 </span>LOptio illo architecto magni odit, ut minima explicabo. Consequatur delectus dolores at, nam veritatis nihil aut vitae debitis?</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- fin de como funciona -->
+
+</body>

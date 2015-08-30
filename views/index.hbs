@@ -7,11 +7,13 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
 	<!-- inicio javaScript -->
 	<script src="vendor/js/jquery.js"></script>
-    <script src="vendor/js/bootstrap.min.js"></script>
-    <!-- fin javaScript -->
-
+	<script src="vendor/js/bootstrap.min.js"></script>
+	<!-- fin javaScript -->
+	<!-- Social Buttons for Bootstrap -->
+	<link href="assets/css/bootstrap-social.css" rel="stylesheet" >
+	<link href="assets/css/font-awesome.css" rel="stylesheet">
+	<link href="assets/css/docs.css" rel="stylesheet" >
 </head>
-
 <body>
 	<!-- inicio header -->
 	<header class="header-principal">
@@ -19,25 +21,25 @@
 			<div class="row">
 				<nav>
 					<div class="conteiner-brand col-xs-8">
-						<img class="img-responsive center-block" src="assets/images/sumarme.png" title="sumarme" alt="sumarme home">
+						<a href="/"><img class="img-responsive center-block" src="assets/images/sumarme.png" title="sumarme" alt="sumarme home"></a>
 					</div>
 					<div class="conteiner-menu col-xs-2">
 						<div class="dropdown">
 							<button class="btn dropdown-toggle" type="button"
-							 		id="dropdownMenu1" data-toggle="dropdown">
-									<span class="glyphicon glyphicon-align-justify">
+							id="dropdownMenu1" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-align-justify"></span>
 							</button>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="#">ingresá</a>
+									<a role="menuitem" tabindex="-1" href="ingresa">ingresar</a>
 								</li>
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="#">registrate</a>
+									<a role="menuitem" tabindex="-1" href="registrate">registrame</a>
 								</li>
 								<li role="presentation">
-									<a role="menuitem" tabindex="-1" href="#">¿como funciona?</a>
+									<a role="menuitem" tabindex="-1" href="#linkComoFunciona">¿como funciona?</a>
 								</li>
-							</ul>			
+							</ul>
 						</div>
 					</div>
 				</nav>
@@ -45,7 +47,6 @@
 		</div>
 	</header>
 	<!--fin de header-->
-
 	<!-- inicio content -->
 	<div class="wrap">
 		<section class="portada">
@@ -60,27 +61,54 @@
 			</div>
 		</section>
 	</div>
+	<div class="col-xs-12">
+		<div class="form-group">
+			<a href="ingresa" class="btn btn-default btn-lg col-xs-12" role="button"><h4 class="button">INGRESAR</h4></a>
+			<a href="registrate" class="btn btn-default btn-lg col-xs-12" role="button"><h4 class="button">REGISTRARME</h4></a>
+		</div>
+	</div>
 	<!-- fin content -->
 	
 	<!-- inicio de como funciona -->
-	<section class="comoFunciona">
-		<div class="conteiner-fluid">
-			<div class="row">
-				<div class="conteiner-tittle">
-					<h1>¿como funciona?</h1>
-				</div>
-				<div class="container-tipo col-xs-12">
-				<p><span class="steps">&#9312 </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia, ipsam cumque veniam.</p>
-				</div>
-				<div class="container-tipo espaciado col-xs-12">
-				<p> <span class="steps">&#9313</span> Officia optio libero recusandae nostrum quidem voluptates impedit asperiores cumque beatae quo facere quibusdam neque, harum ratione ab qui, cum nesciunt sunt.</p>
-				</div>
-				<div class="container-tipo  col-xs-12">
-				<p><span class="steps">&#9314 </span>LOptio illo architecto magni odit, ut minima explicabo. Consequatur delectus dolores at, nam veritatis nihil aut vitae debitis?</p>
+	<div class="comoFunciona" id="linkComoFunciona">
+		<section class="content">
+			<div class="conteiner-fluid">
+				<div class="row">
+					<div class="conteiner">
+						<h1 class="titulo">¿Como funciona?</h1>
+					</div>
+					<div class="container col-xs-12">
+						<span class="steps">&#9312 </span><p class="texto"> Registrate y creá tu perfil, es gratis y podés usar tu cuenta de facebook</p>
+					</div>
+					<div class="container col-xs-12">
+						<span class="steps">&#9313</span><p class="texto">  Si te falta uno, mirá los jugadores disponibles en la zona y elegí a quien
+						convocas</p>
+					</div>
+					<div class="container col-xs-12">
+						<span class="steps">&#9314 </span><p class="texto">Si querés jugar y no tenés equipo, postulate como jugador disponible y esperá ser convocado</p>
+					</div>
+					<div class="conteiner col-xs-12">
+						<div class="important">
+							<h1>Importante!</h1>
+							<p>El jugador convocado NO DEBE PAGAR la cancha.
+							El gasto de la cancha deberá correr por parte del resto del equipo.</p>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	</div>
 	<!-- fin de como funciona -->
-
+	<!-- inicio de footer -->
+	<footer class="footer">
+		<a class="btn btn-social-icon btn-lg btn-twitter btn-footer">
+			<i class="fa fa-twitter"></i>
+		</a>
+		<a class="btn btn-social-icon btn-lg btn-facebook btn-footer">
+			<i class="fa fa-facebook"></i>
+		</a>
+		
+		<span class="clearfix"></span>
+	</footer>
+	<!-- fin de footer -->
 </body>

@@ -1,0 +1,50 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header{
+	background-color: #353535;
+}
+
+.conteiner-brand{
+	margin: 1em;
+}
+
+.conteiner-menu{
+	margin: 2.5em 1em;
+}
+
+section.portada{
+	background: url(../images/content.jpg) center center;
+	background-size: cover;
+	min-height: 38em ;
+}
+
+section.portada h1 {
+    font-family: sans-serif;
+    font-weight: 800;
+    color: #fff;
+    font-size: 3em;
+    margin-top: 10%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-shadow: 0.1em 0.1em 0.1em #000;
+}
+section.portada h2 {
+    font-family: sans-serif;
+    font-weight: 800;
+    color: #fff;
+    font-size: 3em;
+    margin-top: 70%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-shadow: 0.1em 0.1em 0.1em #000;
+}
