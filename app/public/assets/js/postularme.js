@@ -12,11 +12,11 @@ $(document).ready(function() {
         navigator.geolocation.getCurrentPosition(function(position) {
             
             var data = {
+                //necesito agregar algun filtro para identificar el usuario
                 disponible: true,
                 disponibleDesde: disponibleDesde.options[disponibleDesde.selectedIndex].value,
                 disponibleHasta: disponibleHasta.options[disponibleHasta.selectedIndex].value,
                 timestamp: Date.now(),
-                user: 'mayor tom', //cambiar para que tome de un cookie
                 ubicacion: {
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
@@ -36,41 +36,16 @@ $(document).ready(function() {
                 },
                 success: function(res) {
                     console.log(res);
-                    // if (err) {
-                    //     console.log("Se devolvíó el error: " + err);
-                    //     location.reload();
-                    //     return;
-                    // }; // Confirmar/Error y redirigir al perfil del usuario
-                    window.location.replace("/"); // lo puse para que redirija hacia la homepage pero habría que pensar a donde queremos mandar al usuario
+                    window.location.replace("/perfil"); 
                 },
                 error: function(err) {
                     console.log('El error fue: ' + err);
                 }
             });
-            //console.log(JSON.stringify(disponibleDesde.options[disponibleDesde.selectedIndex].value));
-            // socket.emit('getClosestStops', {
-
-            // Comenté los dos de abajo porque los copié más arriba en .ajax
-            // latitude: position.coords.latitude,
-            // longitude: position.coords.longitude
-            // });
-            // }, function(err) {
-            //     console.log('Ocurrio un error mientras se intentaba obtener la ubicacion:' + err);
-            // }, {
-            //     enableHighAccuracy: true,
-            //     timeout: 10000,
-            //     maximumAge: 600000
-            // });
-
-            // if you want to mock up your location, this is Powell & Market St
-            // socket.emit('getClosestStops', {
-            //     latitude: 37.7847999,
-            //     longitude: -122.40768
-            // });
         });
     });
-    //le robé el waitingDialog a a0viedo
 
+    //le robé el waitingDialog a a0viedo
     var waitingDialog = (function($) {
         // Creating modal dialog's DOM
         var $dialog = $(
